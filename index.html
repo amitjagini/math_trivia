@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <head>
+        <title> Math Quiz App </title>
+        <link rel="stylesheet" href = "style.css">
+    </head> 
+    <body bgcolor = "black" text="white">
+        <!-- <center> -->
+            <br> <br> 
+        <div id="titlecard"> Math Trivia </div>
+        <!-- <div> -->
+            <div id="rules">
+                
+                <h4 align="center"> How to play the Quiz</h4>
+                1 - Choose the difficulty <br>
+                2 - Timer depends on level of difficulty <br>
+                3 - Answer the question before the timer ends <br>
+                4 - Secure points upon answering the quiz <br>
+            </div>
+        <!-- </div> -->
+        
+        <div id="details">
+            Enter your name: 
+            <input type="text" placeholder="Type a nickname" id="name">
+            <button onclick="showDetails()" id="but1"> NEXT </button>
+        </div>
+
+        <div id="greetings">
+            <div id="greet"></div>
+            <div id="difficulty">
+                <select id="diff" name="data" onchange="addDiff()">
+                    <option value="Select the choice" disabled selected> Select </option>
+                    <option value=1> Easy </option>
+                    <option value=2> Medium </option>
+                    <option value=3> Hard </option>
+                </select>
+            </div> 
+            <br><div id="diff_mode"> </div>
+            <button id="start" onclick="startGame()"> START </button>
+        </div>
+        <div id="arena">
+            <span id="question"> </span>
+            <span id="timer"> </span>
+            
+        </div>
+        <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+    <script src="quiz_app.js"> </script>
+</html>

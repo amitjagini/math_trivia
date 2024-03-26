@@ -1,0 +1,90 @@
+#titlecard
+{
+    margin-top: 50px ;
+    margin-left: 600px;
+    height: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:fit-content;
+    font-size: xx-large;
+    text-align: center;
+    border-color: whitesmoke;
+    border-style:dashed;
+    padding-top: 1%;
+    padding-bottom:1%;
+    border-width: 6px;
+}
+
+#titlecard:hover
+{
+    background-color: bisque;
+    color:black;
+    border-color: black;
+    border-style: dashed;
+    border-width: 6px;
+}
+#rules
+{
+    font-size: x-large;
+    margin-top: 50px;
+    margin-left: 500px;
+    text-align: left;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 1.5%;
+    border-color: white;
+    border-radius: 1px;
+    border-style: solid;
+    border-width: 5px;
+    height:fit-content;
+    width: 450px;
+    /* display: none; */
+}
+
+#rules:hover{
+    background-color:bisque;
+    color:black;
+    border-color: black;
+    border-style: inset;
+}
+
+#greetings
+{
+    display: none;
+    margin: 50px 525px;
+    font-size: 25px;
+}
+
+#details
+{
+    /* padding-left: 100px; */
+    height: fit-content;
+    margin: 50px 525px;
+    font-size: 25px;
+}
+
+#name , #but1
+{
+    height: 30px;
+    width: 120px; 
+}
+
+#diff_mode
+{
+    margin-left: 100px;
+    width:250px;
+}
+
+#arena
+{
+    font-size: x-large;
+    margin-left: 525px;
+    width: fit-content;
+}
+
+#timer
+{
+    display:none;
+    margin-left: 100px;
+    color: white;
+}
