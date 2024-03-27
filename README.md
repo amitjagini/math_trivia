@@ -5,3 +5,6 @@ This is a web based mathematics quiz, includes questions of basic operations lik
 
 
 ![image](https://github.com/amitjagini/math_trivia/assets/98224731/847d965d-a2b6-4ede-9dde-72d53712600c)
+
+
+![image](https://github.com/amitjagini/math_trivia/assets/98224731/0195a542-bd3a-4f5a-b4a5-3ffc5735ccc8)
