@@ -88,3 +88,8 @@
     margin-left: 100px;
     color: white;
 }
+
+#ans,#score
+{
+    display: none;
+}
