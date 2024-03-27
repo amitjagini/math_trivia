@@ -35,12 +35,14 @@ function addDiff()
     {
         maximum = 100;
         d = 'HARD';
-        timeLimit = 30;
+        timeLimit = 10;
     }
     document.getElementById("diff_mode").innerHTML = d + '--MODE';
     document.getElementById("diff").style.display = 'none';
 }
 
+
+var y;
 
 function startGame()
 {
@@ -56,15 +58,16 @@ function startGame()
     var idx = Math.floor(Math.random()*3);
     qt = element1 + ' ' +operations[idx] + ' ' +element2 + '_ _ _ _ _ _ _ _ _ _ _ _ _' ;
     document.getElementById("question").innerHTML = qt;
-    var y =  setInterval(function() {
+    y =  setInterval(function() {
         document.getElementById("timer").innerHTML = distance + ' s ';
         distance++;
         if(distance==timeLimit)
         {
+            nextQuestion();
             clearInterval(y);
             document.getElementById("timer").innerHTML = "EXPIRED";
         }
-    }, 1500);
+    }, 1000);
 }
 
 function nextQuestion()
@@ -79,18 +82,18 @@ function nextQuestion()
             q+=qt.charAt(i);
         else break;
     }
-    var y = eval(q);
-    var m = Number(y);
+    var num = eval(q);
+    var m = Number(num);
     var a = Number(ans);
-    if(m==a)
+    clearInterval(y);
+    if(m==a && distance<timeLimit)
     {
         score+=(timeLimit-distance)*(difficult);
         document.getElementById("score").innerHTML = "Your score is " + score ;
-        startGame();
     }
     else{
         score-=(timeLimit-distance)*(difficult);
-        document.getElementById("score").innerHTML = "Your score is " + score ;
-        startGame();
+        document.getElementById("score").innerHTML = "Your score is " + score ; 
     }
+    startGame();
 }
