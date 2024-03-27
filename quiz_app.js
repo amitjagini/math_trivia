@@ -3,8 +3,8 @@ var difficult = 0;
 var minimum = 0;
 var maximum = 1000;
 var distance = 0;
-
-const operations = ["+","-","x"];
+var score = 0;
+const operations = ["+","-","*"];
 
 function showDetails()
 {
@@ -47,6 +47,9 @@ function startGame()
     distance = 0;
     document.getElementById("start").style.display = 'none';
     document.getElementById("timer").style.display = 'inline';
+    document.getElementById("ans").style.display = 'inline';
+    document.getElementById("score").style.display = 'inline';
+    document.getElementById("answer").value = '';
     var qt = '';
     var element1 = Math.floor(Math.random()*(maximum-minimum) + minimum);
     var element2 = Math.floor(Math.random()*(element1-minimum) + minimum);
@@ -61,6 +64,33 @@ function startGame()
             clearInterval(y);
             document.getElementById("timer").innerHTML = "EXPIRED";
         }
-    }, 1000);
+    }, 1500);
 }
 
+function nextQuestion()
+{
+    var qt = document.getElementById("question").innerHTML;
+    var ans = document.getElementById("answer").value;
+    var q = '';
+    var l = qt.length;
+    for(var i=0;i<l;i++)
+    {
+        if(qt.charAt(i)!='_')
+            q+=qt.charAt(i);
+        else break;
+    }
+    var y = eval(q);
+    var m = Number(y);
+    var a = Number(ans);
+    if(m==a)
+    {
+        score+=(timeLimit-distance)*(difficult);
+        document.getElementById("score").innerHTML = "Your score is " + score ;
+        startGame();
+    }
+    else{
+        score-=(timeLimit-distance)*(difficult);
+        document.getElementById("score").innerHTML = "Your score is " + score ;
+        startGame();
+    }
+}
